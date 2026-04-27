@@ -1,0 +1,8 @@
+services:
+  - type: static-site
+    name: anniversary-website
+    env: static
+    branch: main
+    buildCommand: ""
+    publishPath: .
+    rootDir: .
