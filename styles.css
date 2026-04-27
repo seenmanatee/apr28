@@ -21,6 +21,7 @@ body {
     gap: 20px;
     padding: 40px;
     box-sizing: border-box;
+    z-index: 2;
 }
 
 .video-wrapper {
@@ -107,6 +108,7 @@ body {
     opacity: 0;
     transition: opacity 2s ease-in-out;
     pointer-events: none;
+    z-index: 1;
 }
 
 #anniversary-page.show {
@@ -283,5 +285,10 @@ p {
     left: 0;
     width: 100%;
     height: 100%;
+    z-index: 0;
     pointer-events: none;
+}
+
+#floating-objects.grabbing {
+    cursor: grabbing;
 }
