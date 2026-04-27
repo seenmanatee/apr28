@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anniversary Surprise</title>
+    <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="video-container">
+        <div class="video-wrapper">
+            <video id="intro-video" autoplay playsinline controls>
+                <source src="0428.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <button id="download-btn" class="download-btn">Download Video</button>
+        <div id="video-error" style="display:none; color: white; text-align: center;">
+            <p>Video failed to load. Please check the file.</p>
+        </div>
+    </div>
+    <div id="anniversary-page" class="hidden">
+        <button id="back-btn" class="back-btn">← Back</button>
+        <div class="background">
+            <!-- Add flower images or use CSS for flowers -->
+            <img src="watercolorlily-removebg-preview.png" class="flower" alt="Watercolor">
+            <img src="watercolorlily-removebg-preview.png" class="flower" alt="Watercolor">
+            <!-- More flowers as needed -->
+        </div>
+        <div class="content">
+            <h1>Happy Anniversary!</h1>
+            <p>Dear My Joanna-Thi Kim Phung,</p>
+            <p>Happy Anniversary! I love you!</p>
+            <!-- Add more text or images -->
+            <img src="laufey.png" class="photo" alt="Memory">
+            <!-- Add more images -->
+        </div>
+        <canvas id="floating-objects"></canvas>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
