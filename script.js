@@ -1,47 +1,42 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const video = document.getElementById('intro-video');
+    const videoFrame = document.getElementById('intro-video');
     const anniversaryPage = document.getElementById('anniversary-page');
     const videoContainer = document.getElementById('video-container');
-    const videoError = document.getElementById('video-error');
     const downloadBtn = document.getElementById('download-btn');
+    const continueBtn = document.getElementById('continue-btn');
     const backBtn = document.getElementById('back-btn');
-
-    console.log('Video element:', video);
-    console.log('Video sources:', video.querySelectorAll('source'));
 
     // Download button functionality
     downloadBtn.addEventListener('click', function() {
         const link = document.createElement('a');
-        link.href = '0428.mp4';
-        link.download = '0428.mp4';
+        link.href = 'https://drive.usercontent.google.com/download?id=1Nx1AUP9u-eVda9OY8gHVw95PI3o0fmsK&export=download&confirm=t';
+        link.download = '0428.mov';
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
     });
 
-    // Back button functionality
-    backBtn.addEventListener('click', function() {
-        anniversaryPage.classList.remove('show');
-        setTimeout(() => {
-            anniversaryPage.classList.add('hidden');
-            videoContainer.style.display = 'flex';
-            video.currentTime = 0;
-            video.play();
-        }, 500);
-    });
-
-    video.addEventListener('error', function() {
-        console.error('Video failed to load');
-        videoError.style.display = 'block';
-    });
-
-    video.addEventListener('ended', function() {
+    continueBtn.addEventListener('click', function() {
         videoContainer.style.display = 'none';
         anniversaryPage.classList.remove('hidden');
         setTimeout(() => {
             anniversaryPage.classList.add('show');
         }, 100);
         initFloatingObjects();
+    });
+
+    videoFrame.addEventListener('load', function() {
+        setTimeout(() => {
+            continueBtn.classList.remove('hidden');
+        }, 5000);
+    });
+
+    backBtn.addEventListener('click', function() {
+        anniversaryPage.classList.remove('show');
+        setTimeout(() => {
+            anniversaryPage.classList.add('hidden');
+            videoContainer.style.display = 'flex';
+        }, 500);
     });
 
     // Floating objects with simple physics
